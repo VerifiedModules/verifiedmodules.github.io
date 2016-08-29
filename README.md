@@ -37,25 +37,26 @@ default modules, npm prepublish scripts, or to run in bot form like [greenkeeper
 very much a work in progress, and is more of a idea list than a fixed plan.
 
 ## V&V
-- [semantic-release](https://www.npmjs.com/package/semantic-release) - fully automated semver compliant package publishing
-- [dont-break](https://www.npmjs.com/package/dont-break) - Checks if the current version of your package would break dependent projects
-- [next-update](https://www.npmjs.com/package/next-update) - Tests if module's dependencies can be updated to the newer version without breaking the tests
-- [depcheck](https://www.npmjs.com/package/depcheck) - Depcheck is a tool for analyzing the dependencies in a project to see: how each dependency is used, which dependencies are useless, and which dependencies are missing from package.json.
+- [semantic-release](https://www.npmjs.com/package/semantic-release) (boennemann) - fully automated semver compliant package publishing
+- [dont-break](https://www.npmjs.com/package/dont-break) (bahmutov)- Checks if the current version of your package would break dependent projects
+- [next-update](https://www.npmjs.com/package/next-update) (bahmutov) - Tests if module's dependencies can be updated to the newer version without breaking the tests
+- [depcheck](https://www.npmjs.com/package/depcheck) (lijunle) - Depcheck is a tool for analyzing the dependencies in a project to see: how each dependency is used, which dependencies are useless, and which dependencies are missing from package.json.
 
 ## Security
-- [update-notifier](https://www.npmjs.com/package/update-notifier) - Update notifications for your CLI app
-- [snyk](https://www.npmjs.com/package/snyk) - Snyk helps you find, fix and monitor for known vulnerabilities in Node.js npm packages, both ad hoc and as part of your CI (Build) system.
-- [retire](https://www.npmjs.com/package/retire) - Retire is a tool for detecting use of vulnerable libraries
-- [nsp](https://www.npmjs.com/package/nsp) - The Node Security (nodesecurity.io) command line interface
-- [auditjs](https://www.npmjs.com/package/auditjs) - Audit dependencies to identify known vulnerabilities and maintenance problems
+- [update-notifier](https://www.npmjs.com/package/update-notifier) (sboudrias) - Update notifications for your CLI app
+- [snyk](https://www.npmjs.com/package/snyk) (remy) - Snyk helps you find, fix and monitor for known vulnerabilities in Node.js npm packages, both ad hoc and as part of your CI (Build) system.
+- [retire](https://www.npmjs.com/package/retire) (eoftedal) - Retire is a tool for detecting use of vulnerable libraries
+- [nsp](https://www.npmjs.com/package/nsp) (nlf) - The Node Security (nodesecurity.io) command line interface
+- [auditjs](https://www.npmjs.com/package/auditjs) (kenduck) - Audit dependencies to identify known vulnerabilities and maintenance problems
 
 ## Style
-- [standard](https://www.npmjs.com/package/standard) - JavaScript Standard Style
-- [package-json-to-readme](https://www.npmjs.com/package/package-json-to-readme) - Generate a README.md from package.json contents
-- [pretty-error](https://www.npmjs.com/package/pretty-error) - See nodejs errors with less clutter
+- [standard](https://www.npmjs.com/package/standard) (feross) - JavaScript Standard Style
+- [package-json-to-readme](https://www.npmjs.com/package/package-json-to-readme) (zeke) - Generate a README.md from package.json contents
+- [pretty-error](https://www.npmjs.com/package/pretty-error) (ariaminaei) - See nodejs errors with less clutter
 
 ## Misc
-- [license-spelunker](https://www.npmjs.com/package/license-spelunker) - Find the licenses of all of you node.js dependencies recursively and create a simple report that includes the license details
+- [license-checker](https://www.npmjs.com/package/license-checker) (davglass) or [licensecheck](https://www.npmjs.com/package/licensecheck) (marcello3d) - We need something to automatically check for license compatibility (or at least guarantee every dep HAS a license, maybe handle simple cases where all the licenses are MIT / BSD)
+- [mos](https://www.npmjs.com/package/mos) (zkochan) - A pluggable module that injects content into your markdown files via hidden JavaScript snippets
 - [david-dm](https://david-dm.org/)
 
 # How you can help
