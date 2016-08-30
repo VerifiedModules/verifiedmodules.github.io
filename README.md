@@ -21,10 +21,12 @@ modules comes with Node core by default.
 
 *Writing quality modules needs to be simpler.*
 
-The goal is to establish a baseline set of specs that node modules should meet, and provide 
-the tools and CI services to programmatically enforce these standards. It will be the ideal registry, where APIs are
+The goal is to establish a set of specs that node modules should meet, and provide 
+the tools and CI services to programmatically enforce these standards. 
+Modules meeting these specs will be featured on a website dedicated to this purpose, and be
+eligible for a badge to proudly display. Collectively it will be the very model of a modern major registry, where APIs are
 always documented, dependencies are always up to date, security fixes are applied instantaneously to everyone's modules
-assuming the change doesn't break anyone's tests in CI.
+(assuming the change doesn't break anyone's tests in CI).
 
 Even if we do not achieve our goal, hopefully our ambition will spark a conversation in the Nodejs community about 
 what qualities we really want modules to have, how to ensure our software is secure and maintained, and how
