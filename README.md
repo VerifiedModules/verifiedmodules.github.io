@@ -76,3 +76,7 @@ All of the above are simply devDependencies, so they add zero weight to the fini
 - Write the code to start glueing these pieces together
 - Identify other goals we might have in common
 - Spread the word
+
+# Prototype
+
+I've started assembling a proof-of-concept module called [exemplar](https://github.com/VerifiedModules/exemplar) that tries to do all the things. Check it out and open a pull request if you're into that kind of thing.
