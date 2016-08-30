@@ -51,13 +51,24 @@ very much a work in progress, and is more of a idea list than a fixed plan.
 
 ## Style
 - [standard](https://www.npmjs.com/package/standard) (feross) - JavaScript Standard Style
-- [package-json-to-readme](https://www.npmjs.com/package/package-json-to-readme) (zeke) - Generate a README.md from package.json contents
-- [pretty-error](https://www.npmjs.com/package/pretty-error) (ariaminaei) - See nodejs errors with less clutter
+
+## Docs
+- `README` candidates - Lets start by mandating a README exists, and then build from there with something like
+  - [package-json-to-readme](https://www.npmjs.com/package/package-json-to-readme) (zeke) - Generate a README.md from package.json contents
+  - [standard-readme](https://www.npmjs.com/package/standard-readme) (richardlitt) - Readme Standard Style
+  - [mos](https://www.npmjs.com/package/mos) (zkochan) - A pluggable module that injects content into your markdown files via hidden JavaScript snippets
 
 ## Misc
-- [license-checker](https://www.npmjs.com/package/license-checker) (davglass) or [licensecheck](https://www.npmjs.com/package/licensecheck) (marcello3d) - We need something to automatically check for license compatibility (or at least guarantee every dep HAS a license, maybe handle simple cases where all the licenses are MIT / BSD)
-- [mos](https://www.npmjs.com/package/mos) (zkochan) - A pluggable module that injects content into your markdown files via hidden JavaScript snippets
+- `LICENSE` candidates - Let's start by mandating a LICENSE exists, and then maybe we can automatically check for license compatibility (or at least guarantee every dep HAS a license, maybe handle simple cases where all the licenses are MIT / BSD)
+  - [license-checker](https://www.npmjs.com/package/license-checker) (davglass) - Check license info for a pacakge
+  - [licensecheck](https://www.npmjs.com/package/licensecheck) (marcello3d) - A quick way to see the licenses of modules you depend on—recursively.
 - [david-dm](https://david-dm.org/)
+
+## Runtime dependencies?
+
+All of the above are simply devDependencies, so they add zero weight to the finished module. Quality modules can be written using only the Node core, so what can we say about runtime modules? I don't know. But let's list some anyway - no idea is being discarded at this point, we're still brainstorming.
+
+- [pretty-error](https://www.npmjs.com/package/pretty-error) (ariaminaei) - See nodejs errors with less clutter
 
 # How you can help
 - Contribute knowledge about any of the modules listed above
