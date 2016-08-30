@@ -43,7 +43,6 @@ very much a work in progress, and is more of a idea list than a fixed plan.
 - [depcheck](https://www.npmjs.com/package/depcheck) (lijunle) - Depcheck is a tool for analyzing the dependencies in a project to see: how each dependency is used, which dependencies are useless, and which dependencies are missing from package.json.
 
 ## Security
-- [update-notifier](https://www.npmjs.com/package/update-notifier) (sboudrias) - Update notifications for your CLI app
 - [snyk](https://www.npmjs.com/package/snyk) (remy) - Snyk helps you find, fix and monitor for known vulnerabilities in Node.js npm packages, both ad hoc and as part of your CI (Build) system.
 - [retire](https://www.npmjs.com/package/retire) (eoftedal) - Retire is a tool for detecting use of vulnerable libraries
 - [nsp](https://www.npmjs.com/package/nsp) (nlf) - The Node Security (nodesecurity.io) command line interface
@@ -68,6 +67,7 @@ very much a work in progress, and is more of a idea list than a fixed plan.
 
 All of the above are simply devDependencies, so they add zero weight to the finished module. Quality modules can be written using only the Node core, so what can we say about runtime modules? I don't know. But let's list some anyway - no idea is being discarded at this point, we're still brainstorming.
 
+- [update-notifier](https://www.npmjs.com/package/update-notifier) (sboudrias) - Update notifications for your CLI app
 - [pretty-error](https://www.npmjs.com/package/pretty-error) (ariaminaei) - See nodejs errors with less clutter
 
 # How you can help
