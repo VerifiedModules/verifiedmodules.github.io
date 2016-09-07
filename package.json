@@ -1,0 +1,30 @@
+{
+  "name": "verifiedmodules.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Verified Modules Initiative website",
+  "gh-pages": {
+    "branch": "master",
+    "url": "https://github.com/verifiedmodules/verifiedmodules.github.io"
+  },
+  "scripts": {
+    "start": "jus serve",
+    "build": "jus build . dist",
+    "deploy": "bash .bin/deploy.sh",
+    "env": "env"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verifiedmodules/verifiedmodules.github.io.git"
+  },
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/verifiedmodules/verifiedmodules.github.io/issues"
+  },
+  "homepage": "https://verifiedmodules.github.io",
+  "devDependencies": {
+    "jus": "^0.21.0",
+    "opener": "^1.4.1"
+  }
+}

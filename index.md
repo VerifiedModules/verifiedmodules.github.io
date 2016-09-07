@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="//yegor256.github.io/tacit/tacit.min.css"/>
+<article>
+
 # About the Verified Modules initiative
 
 *I have a dream...* that one day our children will be able to install node modules without worrying those modules might run `rm -rf /` in their postinstall script!
@@ -21,21 +24,21 @@ modules comes with Node core by default.
 
 *Writing quality modules needs to be simpler.*
 
-The goal is to establish a set of specs that node modules should meet, and provide 
-the tools and CI services to programmatically enforce these standards. 
+The goal is to establish a set of specs that node modules should meet, and provide
+the tools and CI services to programmatically enforce these standards.
 Modules meeting these specs will be featured on a website dedicated to this purpose, and be
 eligible for a badge to proudly display. Collectively it will be the very model of a modern major registry, where APIs are
 always documented, dependencies are always up to date, security fixes are applied instantaneously to everyone's modules
 (assuming the change doesn't break anyone's tests in CI).
 
-Even if we do not achieve our goal, hopefully our ambition will spark a conversation in the Nodejs community about 
+Even if we do not achieve our goal, hopefully our ambition will spark a conversation in the Nodejs community about
 what qualities we really want modules to have, how to ensure our software is secure and maintained, and how
 module authors can better cooperate to develop the shared community codebase together.
 
 # What's involved?
 
 I've been bookmarking modules for a little over a year now that I think would make sense to apply broadly, either as
-default modules, npm prepublish scripts, or to run in bot form like [greenkeeper.io](https://greenkeeper.io). This part is 
+default modules, npm prepublish scripts, or to run in bot form like [greenkeeper.io](https://greenkeeper.io). This part is
 very much a work in progress, and is more of a idea list than a fixed plan.
 
 ## V&V
@@ -82,3 +85,5 @@ All of the above are simply devDependencies, so they add zero weight to the fini
 # Prototype
 
 I've started assembling a proof-of-concept module called [exemplar](https://github.com/VerifiedModules/exemplar) that tries to do all the things. Check it out and open a pull request if you're into that kind of thing.
+
+</article>
