@@ -22,8 +22,9 @@
   "bugs": {
     "url": "https://github.com/verifiedmodules/verifiedmodules.github.io/issues"
   },
-  "homepage": "https://verifiedmodules.github.com",
+  "homepage": "https://verifiedmodules.github.io",
   "devDependencies": {
+    "jus": "^0.21.0",
     "opener": "^1.4.1"
   }
 }
