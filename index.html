@@ -1,0 +1,82 @@
+<h1 id="about-the-verified-modules-initiative" class="deep-link"><a href="#about-the-verified-modules-initiative">About the Verified Modules initiative</a></h1>
+<p><em>I have a dream...</em> that one day our children will be able to install node modules without worrying those modules might run <code>rm -rf /</code> in their postinstall script!</p>
+<p><em>I have a dream...</em> that all modules in the registry have unit tests and adhere to semantic versioning!</p>
+<p><em>I have a dream...</em> that modules like <code>leftpad</code> don&apos;t suddenly get &quot;unpublished&quot; when they were published with an open source license and the community has the right to keep using them!</p>
+<p><em>I have a dream...</em> And so on. You get the drift.</p>
+<h1 id="what-is-the-verified-modules-initiative-working-title" class="deep-link"><a href="#what-is-the-verified-modules-initiative-working-title">What is the <em>Verified Modules Initiative</em> (working title)?</a></h1>
+<blockquote>
+<p>Verification: The evaluation of whether or not a product, service, or system complies with a regulation, requirement, specification, or imposed condition.</p>
+</blockquote>
+<p>It&apos;s 2016 - we need to build large-scale reliable systems on Nodejs, but the current module registries are a wild west.
+Anything goes!</p>
+<p>Well not here. We aim to start holding ourselves to a higher standard. We know what best practices look like,
+but we don&apos;t always practice them like we should. Why? It&apos;s not convenient enough. None of the tools for writing quality
+modules comes with Node core by default.</p>
+<p><em>Writing quality modules needs to be simpler.</em></p>
+<p>The goal is to establish a set of specs that node modules should meet, and provide
+the tools and CI services to programmatically enforce these standards.
+Modules meeting these specs will be featured on a website dedicated to this purpose, and be
+eligible for a badge to proudly display. Collectively it will be the very model of a modern major registry, where APIs are
+always documented, dependencies are always up to date, security fixes are applied instantaneously to everyone&apos;s modules
+(assuming the change doesn&apos;t break anyone&apos;s tests in CI).</p>
+<p>Even if we do not achieve our goal, hopefully our ambition will spark a conversation in the Nodejs community about
+what qualities we really want modules to have, how to ensure our software is secure and maintained, and how
+module authors can better cooperate to develop the shared community codebase together.</p>
+<h1 id="whats-involved" class="deep-link"><a href="#whats-involved">What&apos;s involved?</a></h1>
+<p>I&apos;ve been bookmarking modules for a little over a year now that I think would make sense to apply broadly, either as
+default modules, npm prepublish scripts, or to run in bot form like <a href="https://greenkeeper.io">greenkeeper.io</a>. This part is
+very much a work in progress, and is more of a idea list than a fixed plan.</p>
+<h2 id="vv" class="deep-link"><a href="#vv">V&amp;V</a></h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/semantic-release">semantic-release</a> (boennemann) - fully automated semver compliant package publishing</li>
+<li><a href="https://www.npmjs.com/package/dont-break">dont-break</a> (bahmutov)- Checks if the current version of your package would break dependent projects</li>
+<li><a href="https://www.npmjs.com/package/next-update">next-update</a> (bahmutov) - Tests if module&apos;s dependencies can be updated to the newer version without breaking the tests</li>
+<li><a href="https://www.npmjs.com/package/depcheck">depcheck</a> (lijunle) - Depcheck is a tool for analyzing the dependencies in a project to see: how each dependency is used, which dependencies are useless, and which dependencies are missing from package.json.</li>
+</ul>
+<h2 id="security" class="deep-link"><a href="#security">Security</a></h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/snyk">snyk</a> (remy) - Snyk helps you find, fix and monitor for known vulnerabilities in Node.js npm packages, both ad hoc and as part of your CI (Build) system.</li>
+<li><a href="https://www.npmjs.com/package/retire">retire</a> (eoftedal) - Retire is a tool for detecting use of vulnerable libraries</li>
+<li><a href="https://www.npmjs.com/package/nsp">nsp</a> (nlf) - The Node Security (nodesecurity.io) command line interface</li>
+<li><a href="https://www.npmjs.com/package/auditjs">auditjs</a> (kenduck) - Audit dependencies to identify known vulnerabilities and maintenance problems</li>
+</ul>
+<h2 id="style" class="deep-link"><a href="#style">Style</a></h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/standard">standard</a> (feross) - JavaScript Standard Style</li>
+</ul>
+<h2 id="docs" class="deep-link"><a href="#docs">Docs</a></h2>
+<ul>
+<li><code>README</code> candidates - Lets start by mandating a README exists, and then build from there with something like
+<ul>
+<li><a href="https://www.npmjs.com/package/package-json-to-readme">package-json-to-readme</a> (zeke) - Generate a README.md from package.json contents</li>
+<li><a href="https://www.npmjs.com/package/standard-readme">standard-readme</a> (richardlitt) - Readme Standard Style</li>
+<li><a href="https://www.npmjs.com/package/mos">mos</a> (zkochan) - A pluggable module that injects content into your markdown files via hidden JavaScript snippets</li>
+</ul>
+</li>
+</ul>
+<h2 id="misc" class="deep-link"><a href="#misc">Misc</a></h2>
+<ul>
+<li><code>LICENSE</code> candidates - Let&apos;s start by mandating a LICENSE exists, and then maybe we can automatically check for license compatibility (or at least guarantee every dep HAS a license, maybe handle simple cases where all the licenses are MIT / BSD)
+<ul>
+<li><a href="https://www.npmjs.com/package/license-checker">license-checker</a> (davglass) - Check license info for a pacakge</li>
+<li><a href="https://www.npmjs.com/package/licensecheck">licensecheck</a> (marcello3d) - A quick way to see the licenses of modules you depend on&#x2014;recursively.</li>
+</ul>
+</li>
+<li><a href="https://david-dm.org/">david-dm</a></li>
+</ul>
+<h2 id="runtime-dependencies" class="deep-link"><a href="#runtime-dependencies">Runtime dependencies?</a></h2>
+<p>All of the above are simply devDependencies, so they add zero weight to the finished module. Quality modules can be written using only the Node core, so what can we say about runtime modules? I don&apos;t know. But let&apos;s list some anyway - no idea is being discarded at this point, we&apos;re still brainstorming.</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/update-notifier">update-notifier</a> (sboudrias) - Update notifications for your CLI app</li>
+<li><a href="https://www.npmjs.com/package/pretty-error">pretty-error</a> (ariaminaei) - See nodejs errors with less clutter</li>
+</ul>
+<h1 id="how-you-can-help" class="deep-link"><a href="#how-you-can-help">How you can help</a></h1>
+<ul>
+<li>Contribute knowledge about any of the modules listed above</li>
+<li>Add a module to the list! Or replace modules with ones that are even better!</li>
+<li>Write the code to start glueing these pieces together</li>
+<li>Identify other goals we might have in common</li>
+<li>Spread the word</li>
+</ul>
+<h1 id="prototype" class="deep-link"><a href="#prototype">Prototype</a></h1>
+<p>I&apos;ve started assembling a proof-of-concept module called <a href="https://github.com/VerifiedModules/exemplar">exemplar</a> that tries to do all the things. Check it out and open a pull request if you&apos;re into that kind of thing.</p>

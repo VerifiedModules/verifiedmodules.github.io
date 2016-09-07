@@ -1,0 +1,27 @@
+{
+  "name": "@wmhilton/wmhilton.github.io.source",
+  "version": "1.0.0",
+  "private": true,
+  "description": "William Hilton's website",
+  "scripts": {
+    "start": "jus serve",
+    "deploy": "npm run build && npm run commit && npm run push && npm run open",
+    "build": "jus build . dist",
+    "commit": "git add dist && git commit -m deploy",
+    "push": "git subrepo push dist",
+    "open": "opener https://wmhilton.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmhilton/wmhilton.github.io.git"
+  },
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/wmhilton/wmhilton.github.io/issues"
+  },
+  "homepage": "https://github.com/wmhilton/wmhilton.github.io#readme",
+  "devDependencies": {
+    "opener": "^1.4.1"
+  }
+}
