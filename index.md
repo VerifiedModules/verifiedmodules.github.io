@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="//yegor256.github.io/tacit/tacit.min.css"/>
 <article>
+<p align="center"><img alt="Verified Modules Initiative Logo" src="/assets/badge.png"></p>
 
 # About the Verified Modules initiative
 
