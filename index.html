@@ -1,21 +1,39 @@
-<link rel="stylesheet" href="//yegor256.github.io/tacit/tacit.min.css">
-<article>
-<p align="center"><img alt="Verified Modules Initiative Logo" src="/assets/badge.png"></p>
-<h1 id="about-the-verified-modules-initiative" class="deep-link"><a href="#about-the-verified-modules-initiative">About the Verified Modules initiative</a></h1>
-<p><em>I have a dream...</em> that one day our children will be able to install node modules without worrying those modules might run <code>rm -rf /</code> in their postinstall script!</p>
-<p><em>I have a dream...</em> that all modules in the registry have unit tests and adhere to semantic versioning!</p>
-<p><em>I have a dream...</em> that modules like <code>leftpad</code> don&apos;t suddenly get &quot;unpublished&quot; when they were published with an open source license and the community has the right to keep using them!</p>
-<p><em>I have a dream...</em> And so on. You get the drift.</p>
-<h1 id="what-is-the-verified-modules-initiative-working-title" class="deep-link"><a href="#what-is-the-verified-modules-initiative-working-title">What is the <em>Verified Modules Initiative</em> (working title)?</a></h1>
-<blockquote>
-<p>Verification: The evaluation of whether or not a product, service, or system complies with a regulation, requirement, specification, or imposed condition.</p>
-</blockquote>
+<html>
+<head>
+  <title>About</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.css">
+</head>
+<body>
+  <!--
+title: About
+-->
+<article class="ui grid container">
+<div class="row">
+  <div class="column">
+    <img class="ui centered image" alt="Verified Modules Initiative Logo" src="/assets/badge.png">
+  </div>
+</div>
+<section class="ui vertical segment">
+<h1 class="ui header">What is the <i>Verified Modules Initiative</i> (working title)?</h1>
+<div class="ui segment" style="width: 50%; margin-left: auto; margin-right: auto">
+  <div class="ui list">
+    <div class="item">
+      <i class="book icon"></i>
+      <div class="content">
+        <span class="header">Verification</span>
+        <div class="description">The evaluation of whether or not a product, service, or system complies with a regulation, requirement, specification, or imposed condition.</div>
+      </div>
+    </div>
+  </div>
+</div>
 <p>It&apos;s 2016 - we need to build large-scale reliable systems on Nodejs, but the current module registries are a wild west.
 Anything goes!</p>
 <p>Well not here. We aim to start holding ourselves to a higher standard. We know what best practices look like,
 but we don&apos;t always practice them like we should. Why? It&apos;s not convenient enough. None of the tools for writing quality
 modules comes with Node core by default.</p>
-<p><em>Writing quality modules needs to be simpler.</em></p>
+<p style="text-align: center">
+  <i class="ui header">Writing quality modules needs to be simpler.</i>
+</p>
 <p>The goal is to establish a set of specs that node modules should meet, and provide
 the tools and CI services to programmatically enforce these standards.
 Modules meeting these specs will be featured on a website dedicated to this purpose, and be
@@ -25,55 +43,317 @@ always documented, dependencies are always up to date, security fixes are applie
 <p>Even if we do not achieve our goal, hopefully our ambition will spark a conversation in the Nodejs community about
 what qualities we really want modules to have, how to ensure our software is secure and maintained, and how
 module authors can better cooperate to develop the shared community codebase together.</p>
-<h1 id="whats-involved" class="deep-link"><a href="#whats-involved">What&apos;s involved?</a></h1>
+</section>
+<section class="ui vertical segment">
+<h1 class="ui header">What&apos;s involved?</h1>
 <p>I&apos;ve been bookmarking modules for a little over a year now that I think would make sense to apply broadly, either as
 default modules, npm prepublish scripts, or to run in bot form like <a href="https://greenkeeper.io">greenkeeper.io</a>. This part is
 very much a work in progress, and is more of a idea list than a fixed plan.</p>
-<h2 id="vv" class="deep-link"><a href="#vv">V&amp;V</a></h2>
-<ul>
-<li><a href="https://www.npmjs.com/package/semantic-release">semantic-release</a> (boennemann) - fully automated semver compliant package publishing</li>
-<li><a href="https://www.npmjs.com/package/dont-break">dont-break</a> (bahmutov)- Checks if the current version of your package would break dependent projects</li>
-<li><a href="https://www.npmjs.com/package/next-update">next-update</a> (bahmutov) - Tests if module&apos;s dependencies can be updated to the newer version without breaking the tests</li>
-<li><a href="https://www.npmjs.com/package/depcheck">depcheck</a> (lijunle) - Depcheck is a tool for analyzing the dependencies in a project to see: how each dependency is used, which dependencies are useless, and which dependencies are missing from package.json.</li>
-</ul>
-<h2 id="security" class="deep-link"><a href="#security">Security</a></h2>
-<ul>
-<li><a href="https://www.npmjs.com/package/snyk">snyk</a> (remy) - Snyk helps you find, fix and monitor for known vulnerabilities in Node.js npm packages, both ad hoc and as part of your CI (Build) system.</li>
-<li><a href="https://www.npmjs.com/package/retire">retire</a> (eoftedal) - Retire is a tool for detecting use of vulnerable libraries</li>
-<li><a href="https://www.npmjs.com/package/nsp">nsp</a> (nlf) - The Node Security (nodesecurity.io) command line interface</li>
-<li><a href="https://www.npmjs.com/package/auditjs">auditjs</a> (kenduck) - Audit dependencies to identify known vulnerabilities and maintenance problems</li>
-</ul>
-<h2 id="style" class="deep-link"><a href="#style">Style</a></h2>
-<ul>
-<li><a href="https://www.npmjs.com/package/standard">standard</a> (feross) - JavaScript Standard Style</li>
-</ul>
-<h2 id="docs" class="deep-link"><a href="#docs">Docs</a></h2>
-<ul>
-<li><code>README</code> candidates - Lets start by mandating a README exists, and then build from there with something like
-<ul>
-<li><a href="https://www.npmjs.com/package/package-json-to-readme">package-json-to-readme</a> (zeke) - Generate a README.md from package.json contents</li>
-<li><a href="https://www.npmjs.com/package/standard-readme">standard-readme</a> (richardlitt) - Readme Standard Style</li>
-<li><a href="https://www.npmjs.com/package/mos">mos</a> (zkochan) - A pluggable module that injects content into your markdown files via hidden JavaScript snippets</li>
-</ul>
-</li>
-</ul>
-<h2 id="misc" class="deep-link"><a href="#misc">Misc</a></h2>
-<ul>
-<li><code>LICENSE</code> candidates - Let&apos;s start by mandating a LICENSE exists, and then maybe we can automatically check for license compatibility (or at least guarantee every dep HAS a license, maybe handle simple cases where all the licenses are MIT / BSD)
-<ul>
-<li><a href="https://www.npmjs.com/package/license-checker">license-checker</a> (davglass) - Check license info for a pacakge</li>
-<li><a href="https://www.npmjs.com/package/licensecheck">licensecheck</a> (marcello3d) - A quick way to see the licenses of modules you depend on&#x2014;recursively.</li>
-</ul>
-</li>
-<li><a href="https://david-dm.org/">david-dm</a></li>
-</ul>
-<h2 id="runtime-dependencies" class="deep-link"><a href="#runtime-dependencies">Runtime dependencies?</a></h2>
-<p>All of the above are simply devDependencies, so they add zero weight to the finished module. Quality modules can be written using only the Node core, so what can we say about runtime modules? I don&apos;t know. But let&apos;s list some anyway - no idea is being discarded at this point, we&apos;re still brainstorming.</p>
-<ul>
-<li><a href="https://www.npmjs.com/package/update-notifier">update-notifier</a> (sboudrias) - Update notifications for your CLI app</li>
-<li><a href="https://www.npmjs.com/package/pretty-error">pretty-error</a> (ariaminaei) - See nodejs errors with less clutter</li>
-</ul>
-<h1 id="how-you-can-help" class="deep-link"><a href="#how-you-can-help">How you can help</a></h1>
+<div class="ui list">
+<div class="item">
+<i class="folder icon"></i>
+<div class="content">
+<div class="header">V&amp;V</div>
+<div class="list">
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/semantic-release">semantic-release</a> (boennemann)</p>
+</div>
+<div class="description">
+<p>fully automated semver compliant package publishing</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/dont-break">dont-break</a> (bahmutov)</p>
+</div>
+<div class="description">
+<p>Checks if the current version of your package would break dependent projects</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/next-update">next-update</a> (bahmutov)</p>
+</div>
+<div class="description">
+<p>Tests if module&apos;s dependencies can be updated to the newer version without breaking the tests</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/depcheck">depcheck</a> (lijunle)</p>
+</div>
+<div class="description">
+<p>Depcheck is a tool for analyzing the dependencies in a project to see: how each dependency is used, which dependencies are useless, and which dependencies are missing from package.json.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="folder icon"></i>
+<div class="content">
+<div class="header">Security</div>
+<div class="list">
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/snyk">snyk</a> (remy)</p>
+</div>
+<div class="description">
+<p>Snyk helps you find, fix and monitor for known vulnerabilities in Node.js npm packages, both ad hoc and as part of your CI (Build) system.</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/retire">retire</a> (eoftedal)</p>
+</div>
+<div class="description">
+<p>Retire is a tool for detecting use of vulnerable libraries</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/nsp">nsp</a> (nlf)</p>
+</div>
+<div class="description">
+<p>The Node Security (nodesecurity.io) command line interface</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/auditjs">auditjs</a> (kenduck)</p>
+</div>
+<div class="description">
+<p>Audit dependencies to identify known vulnerabilities and maintenance problems</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="folder icon"></i>
+<div class="content">
+<div class="header">Safety</div>
+<div class="list">
+<div class="item">
+<i class="help icon"></i>
+<div class="content">
+<div class="description">
+<p>What can we do about malicious packages? Can we free people from the potential that a postinstall script might run <code>rm -rf /</code> (or otherwise tamper with the system)?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="folder icon"></i>
+<div class="content">
+<div class="header">Tests</div>
+<div class="list">
+<div class="item">
+<i class="help icon"></i>
+<div class="content">
+<div class="description">
+<p>We need a way to verify that a module has good test coverage. Can we do something similar to <a href="npms.io">npms.io</a> and use <a href="https://img.shields.io/coveralls/IndigoUnited/node-planify.json">img.shields.io JSON API</a> for that?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="folder icon"></i>
+<div class="content">
+<div class="header">Style</div>
+<div class="list">
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/standard">standard</a> (feross)</p>
+</div>
+<div class="description">
+<p>JavaScript Standard Style</p>
+</div>
+<div class="list">
+<div class="item">
+<i class="help icon"></i>
+<div class="content">
+<p>Is that controversial? Too limiting?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="folder icon"></i>
+<div class="content">
+<div class="header">Docs</div>
+<div class="list">
+<div class="item">
+<i class="help icon"></i>
+<div class="content">
+<div class="description">
+<p><code>README</code> candidates - Lets start by mandating a README exists, and then build from there with something like</p>
+</div>
+<div class="list">
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/package-json-to-readme">package-json-to-readme</a> (zeke)</p>
+</div>
+<div class="description">
+<p>Generate a README.md from package.json contents</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/standard-readme">standard-readme</a> (richardlitt)</p>
+</div>
+<div class="description">
+<p>Readme Standard Style</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/mos">mos</a> (zkochan)</p>
+</div>
+<div class="description">
+<p>A pluggable module that injects content into your markdown files via hidden JavaScript snippets</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="folder icon"></i>
+<div class="content">
+<div class="header">Misc</div>
+<div class="list">
+<div class="item">
+<i class="help icon"></i>
+<div class="content">
+<div class="description">
+<p><code>LICENSE</code> candidates - Let&apos;s start by mandating a LICENSE exists, and then maybe we can automatically check for license compatibility (or at least guarantee every dep HAS a license, maybe handle simple cases where all the licenses are MIT / BSD)</p>
+</div>
+<div class="list">
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/license-checker">license-checker</a> (davglass)</p>
+</div>
+<div class="description">
+<p>Check license info for a package</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/licensecheck">licensecheck</a> (marcello3d)</p>
+</div>
+<div class="description">
+<p>A quick way to see the licenses of modules you depend on&#x2014;recursively.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://david-dm.org/">david-dm</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="folder icon"></i>
+<div class="content">
+<div class="header">
+Runtime dependencies?
+</div>
+<div class="description">
+All of the above are simply devDependencies, so they add zero weight to the finished module. Quality modules can be written using only the Node core, so what can we say about runtime modules? I don&apos;t know. But let&apos;s list some anyway - no idea is being discarded at this point, we&apos;re still brainstorming.
+</div>
+<div class="list">
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/update-notifier">update-notifier</a> (sboudrias)</p>
+</div>
+<div class="description">
+<p>Update notifications for your CLI app</p>
+</div>
+</div>
+</div>
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+<p><a href="https://www.npmjs.com/package/pretty-error">pretty-error</a> (ariaminaei)</p>
+</div>
+<div class="description">
+<p>See nodejs errors with less clutter</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</section>
+<section class="ui vertical segment">
+<h1 class="ui header">How you can help</h1>
 <ul>
 <li>Contribute knowledge about any of the modules listed above</li>
 <li>Add a module to the list! Or replace modules with ones that are even better!</li>
@@ -81,6 +361,15 @@ very much a work in progress, and is more of a idea list than a fixed plan.</p>
 <li>Identify other goals we might have in common</li>
 <li>Spread the word</li>
 </ul>
-<h1 id="prototype" class="deep-link"><a href="#prototype">Prototype</a></h1>
+</section>
+<section class="ui vertical segment">
+<h1 class="ui header">Prototype</h1>
 <p>I&apos;ve started assembling a proof-of-concept module called <a href="https://github.com/VerifiedModules/exemplar">exemplar</a> that tries to do all the things. Check it out and open a pull request if you&apos;re into that kind of thing.</p>
+</section>
 </article>
+
+  <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3030/browser-sync/browser-sync-client.2.15.0.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+</body>
+</html>
