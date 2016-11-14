@@ -308,6 +308,22 @@ Is that controversial? Too limiting?
 <div class="content">
 <div class="header">
 
+[projectz](https://www.npmjs.com/package/projectz) (balupton)
+
+</div>
+<div class="description">
+
+Stop wasting time syncing and updating your project's README and Package Files!
+
+</div>
+</div>
+</div>
+
+<div class="item">
+<i class="cube icon"></i>
+<div class="content">
+<div class="header">
+
 [package-json-to-readme](https://www.npmjs.com/package/package-json-to-readme) (zeke)
 
 </div>
